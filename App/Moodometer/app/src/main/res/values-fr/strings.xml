@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Options</string>
+    <string name="how_are_you">Comment vas-tu?</string>
+    <string name="moyenne_des_7_derniers_jours">Moyenne des 7 derniers jours</string>
+    <string name="bad_mind">Rolala… Tu as vraiment besoin de chatons:</string>
+    <string name="average_mind">Je crois qu\'il te faut des chiots: </string>
+    <string name="pretty_good_mind">Plutôt pas mal non! That\'s cool!</string>
+    <string name="good_mind">Ca roule en fait! Like a boss!</string>
+</resources>

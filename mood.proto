@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package moodometer;
+
+option java_package = "proto.moodometer";
+
+message User {
+	int32 id = 1;
+	string name = 2;
+	Moods moods = 3;
+}
+
+message Mood {
+	string mind = 1;
+	float score = 2;
+	int64 date = 4;
+	User user = 5;
+}
+
+message Meter {
+	float avg = 1;
+	repeated string xSmiley = 2;
+}
+
+message Moods {
+	repeated Mood moods = 1;
+}

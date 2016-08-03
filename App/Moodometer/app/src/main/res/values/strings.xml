@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name" translatable="false">Moodometer</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format" translatable="false">Hello World from section: %1$d</string>
+    <string name="title_activity_mood" translatable="false">MoodActivity</string>
+    <string name="superheros" translatable="false">superHeros</string>
+    <string name="how_are_you">How are you?</string>
+    <string name="moyenne_des_7_derniers_jours">Average of last 7 days</string>
+    <string name="gif" translatable="false">gif</string>
+    <string name="powered_by_giphy" translatable="false">Powered By Giphy</string>
+    <string name="bad_mind">What\'s happened? Lot of kitties for you:</string>
+    <string name="average_mind">Okay, you need puppies:</string>
+    <string name="pretty_good_mind">That\'s pretty good! Cool!</string>
+    <string name="good_mind">You rock! Like a boss!</string>
+</resources>

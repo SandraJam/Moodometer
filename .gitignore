@@ -1,2 +1,10 @@
 Server/.idea
 Server/Server.iml
+App/Moodometer/Moodometer.iml
+App/Moodometer/.gradle
+App/Moodometer/local.properties
+App/Moodometer/.idea/workspace.xml
+App/Moodometer/.idea/libraries
+App/Moodometer/.DS_Store
+App/Moodometer/build
+App/Moodometer/captures
