@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -21,42 +22,53 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/text_margin"
                 android:id="@+id/textView_score_avg"
-                android:textSize="100sp"/>
+                android:textSize="100sp"
+                android:background="@drawable/circlebad"
+                android:padding="24dp"/>
 
             <TextView
+                android:id="@+id/average_sentence"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/moyenne_des_7_derniers_jours"/>
 
         </LinearLayout>
 
-
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:gravity="center"
         android:layout_weight="1"
-        android:layout_margin="@dimen/activity_horizontal_margin">
+        android:id="@+id/card_gif"
 
-        <TextView
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp"
+        >
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView_gif"
-            android:layout_margin="@dimen/text_margin" />
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView_gif"
+                android:layout_margin="@dimen/text_margin" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:id="@+id/imageview_gif"
-            android:contentDescription="@string/gif" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/imageview_gif"
+                android:contentDescription="@string/gif" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/powered_by_giphy"
-            android:layout_gravity="right" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/powered_by_giphy"
+                android:layout_gravity="left"
+                android:layout_margin="@dimen/text_margin" />
 
-    </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
 
 </LinearLayout>

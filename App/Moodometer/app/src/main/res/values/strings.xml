@@ -12,4 +12,6 @@
     <string name="average_mind">Okay, you need puppies:</string>
     <string name="pretty_good_mind">That\'s pretty good! Cool!</string>
     <string name="good_mind">You rock! Like a boss!</string>
+    <string name="firstStart">Welcome in the Moodometer!</string>
+    <string name="add_mood">Add</string>
 </resources>

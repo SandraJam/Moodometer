@@ -1,35 +1,31 @@
 package com.example.octo_sdu.moodometer
 
-import android.content.Intent
+import android.app.Activity
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.v7.app.AppCompatActivity
-import android.widget.EditText
-import android.widget.RatingBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.example.octo_sdu.moodometer.addMood.interactor.MoodInteractorDecorated
 import com.example.octo_sdu.moodometer.addMood.interactor.MoodInteractorImpl
 import com.example.octo_sdu.moodometer.addMood.presenter.MoodPresenterImpl
 import com.example.octo_sdu.moodometer.addMood.view.MoodViewValidate
 import com.example.octo_sdu.moodometer.addMood.view.MoodViewValidateDecorated
-import com.example.octo_sdu.moodometer.repository.Manager
-import com.example.octo_sdu.moodometer.repository.SaviorLocalFileImpl
+import com.example.octo_sdu.moodometer.repository.localRepository.SaviorLocalFileImpl
+import java.io.File
 import java.text.DateFormat
 import java.util.*
 
-class MoodActivity : AppCompatActivity(), MoodViewValidate {
+class MoodActivity : Activity(), MoodViewValidate {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mood)
+        setTheme(android.R.style.Theme_Material_Light_Dialog)
 
         val textDate = findViewById(R.id.text_date) as TextView
         textDate.text = DateFormat.getDateInstance(DateFormat.DEFAULT, java.util.Locale.getDefault()).format(Date().time)
 
-        val interactor = MoodInteractorDecorated(MoodInteractorImpl(MoodPresenterImpl(MoodViewValidateDecorated(this)), SaviorLocalFileImpl(this), Manager()))
-        val fabAddMood = findViewById(R.id.fab_add_mood) as FloatingActionButton
-        fabAddMood.setOnClickListener {
+        val interactor = MoodInteractorDecorated(MoodInteractorImpl(MoodPresenterImpl(MoodViewValidateDecorated(this)), SaviorLocalFileImpl(File(applicationContext.filesDir.path.toString() +"/mood"))))
+        val buttonAddMood = findViewById(R.id.button_add_mood) as Button
+        buttonAddMood.setOnClickListener {
             interactor.addMood(
                     (findViewById(R.id.ratingBar) as RatingBar).rating,
                     (findViewById(R.id.edit_text_add_mood) as EditText).text.toString(),
@@ -38,15 +34,10 @@ class MoodActivity : AppCompatActivity(), MoodViewValidate {
     }
 
     override fun success() {
-        onBackPressed()
+        finish()
     }
 
     override fun fail() {
         Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onBackPressed() {
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
     }
 }

@@ -8,10 +8,7 @@ import com.example.octo_sdu.moodometer.R
 import com.example.octo_sdu.moodometer.listMood.view.ListFragmentViewHolder
 
 class ListFragmentAdapter(
-        internal var listMind: List<String>,
-        internal var listScore: List<String>,
-        internal var listDate: List<String>,
-        internal var whatColor: List<Int>) : RecyclerView.Adapter<ListFragmentViewHolder>() {
+        internal var listMoodViewModel: List<MoodViewModel>) : RecyclerView.Adapter<ListFragmentViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, itemType: Int): ListFragmentViewHolder {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.cell_mood, viewGroup, false)
@@ -19,9 +16,9 @@ class ListFragmentAdapter(
     }
 
     override fun onBindViewHolder(myViewHolder: ListFragmentViewHolder, position: Int) =
-        myViewHolder.bind(listMind[position], listScore[position], listDate[position], whatColor[position])
+        myViewHolder.bind(listMoodViewModel[position])
 
 
-    override fun getItemCount(): Int = listMind.size
+    override fun getItemCount(): Int = listMoodViewModel.size
 
 }

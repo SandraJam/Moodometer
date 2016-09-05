@@ -27,9 +27,15 @@ android {
     }
 }
 
+kapt {
+    generateStubs = true
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:3.5.2'
+
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support:design:24.1.1'
     compile 'com.android.support:cardview-v7:24.1.1'
@@ -38,9 +44,19 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-moshi:2.1.0'
+    compile 'com.google.dagger:dagger:2.6.1'
+    kapt 'com.google.dagger:dagger-compiler:2.6.1'
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 repositories {
     mavenCentral()
+}
+
+
+// JUnit tests missing test resources in classpath >> https://code.google.com/p/android/issues/detail?id=64887
+// This task copies the resources to a folder that exists on the classpath
+task copyTestResources(type: Copy) {
+    from "${projectDir}/src/test/resources"
+    into "${buildDir}/classes/test"
 }

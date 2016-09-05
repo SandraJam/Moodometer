@@ -8,28 +8,6 @@
     tools:context="com.example.octo_sdu.moodometer.MoodActivity"
     tools:showIn="@layout/activity_mood">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="@dimen/text_margin"
-        android:layout_gravity="center_horizontal">
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ratingBar"
-            android:layout_gravity="center_horizontal" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/edit_text_add_mood"
-            android:inputType="textShortMessage"
-            android:hint="@string/how_are_you"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/text_date"
-            android:textStyle="italic"/>
-    </LinearLayout>
+
 
 </android.support.v4.widget.NestedScrollView>

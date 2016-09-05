@@ -30,33 +30,38 @@
 
     </LinearLayout>
 
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_margin="@dimen/activity_horizontal_margin">
-
-        <TextView
+        android:id="@+id/card_gif"
+        >
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView_gif"
-            android:layout_margin="@dimen/text_margin" />
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="@dimen/activity_horizontal_margin">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:id="@+id/imageview_gif"
-            android:contentDescription="@string/gif" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView_gif"
+                android:layout_margin="@dimen/text_margin" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/powered_by_giphy"
-            android:layout_gravity="right" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/imageview_gif"
+                android:contentDescription="@string/gif" />
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/powered_by_giphy"
+                android:layout_gravity="left" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

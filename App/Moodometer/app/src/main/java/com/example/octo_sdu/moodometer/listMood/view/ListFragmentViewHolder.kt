@@ -1,21 +1,20 @@
 package com.example.octo_sdu.moodometer.listMood.view
 
+import android.support.v4.content.res.ResourcesCompat
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import android.widget.RelativeLayout
 import android.widget.TextView
 import com.example.octo_sdu.moodometer.R
 
 class ListFragmentViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-    val textviewMind = itemView!!.findViewById(R.id.textView_mind) as TextView
-    val textviewScore = itemView!!.findViewById(R.id.textView_score) as TextView
-    val textviewDate = itemView!!.findViewById(R.id.textView_date) as TextView
-    val relativeLayoutCell = itemView!!.findViewById(R.id.relative_layout_cell) as RelativeLayout
+    val textViewMind = itemView!!.findViewById(R.id.textView_mind) as TextView
+    val textViewScore = itemView!!.findViewById(R.id.textView_score) as TextView
+    val textViewDate = itemView!!.findViewById(R.id.textView_date) as TextView
 
-    fun bind(mind: String, score: String, date: String, color: Int) {
-        textviewMind.text = mind
-        textviewScore.text = score
-        textviewDate.text = date
-        relativeLayoutCell.setBackgroundResource(color)
+    fun bind(moodViewModel: MoodViewModel) {
+        textViewMind.text = moodViewModel.mind
+        textViewScore.text = moodViewModel.score
+        textViewDate.text = moodViewModel.date
+        textViewScore.background = ResourcesCompat.getDrawable(itemView!!.resources, moodViewModel.color, null)
     }
 }

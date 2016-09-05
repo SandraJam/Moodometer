@@ -3,7 +3,6 @@ package com.example.octo_sdu.moodometer
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import com.example.octo_sdu.moodometer.ListFragment
 
 class SectionsPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 

@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#4DB6AC</color>
     <color name="colorAccent">#FF6D00</color>
     <color name="colorWhite">#ffffff</color>
-    <color name="colorGood">#99f282</color>
-    <color name="colorAverage">#e6b675</color>
-    <color name="colorBad">#8ca3e2</color>
+    <color name="colorGood">#8BC34A</color>
+    <color name="colorAverage">#FFC107</color>
+    <color name="colorBad">#03A9F4</color>
 </resources>
